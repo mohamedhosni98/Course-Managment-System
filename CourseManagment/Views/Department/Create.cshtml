@@ -1,0 +1,82 @@
+﻿@using CourseManagment.ViewModel.DepartmentVM
+@using CourseManagment.ViewModel.InstructorVM
+@using CourseManagment.ViewModel
+@model DepartmentViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%); min-height: 100vh;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0" style="border-radius: 15px;">
+                <div class="card-header bg-primary text-white text-center" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                    <h1 class="h4 mb-0">Create New Department</h1>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                        <div class="form-group mb-3">
+                            <label asp-for="Name" class="control-label fw-bold"></label>
+                            <input asp-for="Name" class="form-control form-control-lg rounded-pill" placeholder="Enter department name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="Manager" class="control-label fw-bold"></label>
+                            <input asp-for="Manager" class="form-control form-control-lg rounded-pill" placeholder="Enter manager name" />
+                            <span asp-validation-for="Manager" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Create" class="btn btn-primary btn-lg rounded-pill px-5 create-btn" />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center pb-4">
+                    <a asp-action="Index" class="btn btn-outline-primary btn-lg rounded-pill px-4">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .create-btn {
+        transition: all 0.3s ease;
+    }
+
+        .create-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+    .form-control:focus {
+        border-color: #4e73df;
+        box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+    }
+
+    .btn-outline-primary {
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #e9ecef;
+            transform: scale(1.05);
+        }
+</style>

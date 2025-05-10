@@ -1,0 +1,410 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model dynamic
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSync - Course Management System</title>
+    <!-- CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #5b21b6;
+            --secondary-color: #a78bfa;
+            --accent-color: #ec4899;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: var(--primary-color) !important;
+            }
+
+        .navbar-btn {
+            background: var(--primary-color);
+            color: white !important;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+            .navbar-btn:hover {
+                background: var(--secondary-color);
+                transform: translateY(-2px);
+            }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(192, 132, 252, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid var(--light-color);
+        }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+        }
+
+            .hero-content h1 {
+                font-size: 3.75rem;
+                font-weight: 800;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.5rem;
+                opacity: 0.9;
+                margin-bottom: 2rem;
+            }
+
+        .btn-hero {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.75rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+            .btn-hero:hover {
+                background: var(--accent-color);
+                color: white;
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            padding: 5rem 0;
+        }
+
+            .features-section h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1rem;
+            }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            }
+
+            .feature-card img {
+                height: 160px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .feature-card:hover img {
+                transform: scale(1.05);
+            }
+
+            .feature-card .card-body {
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .feature-card h5 {
+                color: var(--primary-color);
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+
+            .feature-card .btn {
+                border-radius: 50px;
+                padding: 0.5rem 1.5rem;
+                transition: all 0.3s ease;
+            }
+
+                .feature-card .btn:hover {
+                    background: var(--primary-color);
+                    color: white;
+                    transform: scale(1.05);
+                }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0;
+        }
+
+            .footer h5 {
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+            }
+
+            .footer a {
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .footer a:hover {
+                    color: white;
+                }
+
+            .footer .social-icons a {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            .footer hr {
+                background: rgba(255,255,255,0.2);
+                margin: 2rem 0;
+            }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">EduSync</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-btn" href="#">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div id="particles-js"></div>
+        <div class="container hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to EduSync</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">The most intuitive and efficient course management system to enhance your learning experience</p>
+            <a href="@Url.Action("Index", "Course")" class="btn btn-hero animate__animated animate__zoomIn animate__delay-2s">
+                <i class="fas fa-rocket me-2"></i> Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="text-center text-dark fw-bold mb-5">Explore Our Features</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card feature-card shadow-lg border-0">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Departments" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Departments</h5>
+                            <p class="card-text text-muted">Effortlessly manage academic departments and their operations.</p>
+                            <a href="@Url.Action("Index", "Department")" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card feature-card shadow-lg border-0">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Instructors" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Instructors</h5>
+                            <p class="card-text text-muted">Organize instructor profiles and course assignments.</p>
+                            <a href="@Url.Action("Index", "Instructor")" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card feature-card shadow-lg border-0">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Courses" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Courses</h5>
+                            <p class="card-text text-muted">Design and manage engaging courses with ease.</p>
+                            <a href="@Url.Action("Index", "Course")" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card feature-card shadow-lg border-0">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Students" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Students</h5>
+                            <p class="card-text text-muted">Track student progress and performance seamlessly.</p>
+                            <a href="@Url.Action("Index", "Student")" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>EduSync</h5>
+                    <p>Your ultimate solution for streamlined course management and educational excellence.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#features">Features</a></li>
+                        <li class="mb-2"><a href="#pricing">Pricing</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@edusync.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +1-800-123-4567</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> New York, USA</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2025 EduSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Particles.js Configuration
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 1000 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 3, direction: "none", random: false, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate on Scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

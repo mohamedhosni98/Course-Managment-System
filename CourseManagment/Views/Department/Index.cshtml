@@ -1,0 +1,72 @@
+﻿@using CourseManagment.ViewModel.DepartmentVM
+@model IEnumerable<DepartmentViewModelWithIndex>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%); min-height: 100vh;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-dark fw-bold" style="font-size: 2.5rem;">Departments</h1>
+            <a asp-action="Create" class="btn btn-warning btn-lg rounded-pill px-4 py-2 shadow-sm create-btn">Create New</a>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-lg border-0 h-100" style="background: linear-gradient(145deg, #6c757d 0%, #495057 100%); border-radius: 15px; transition: transform 0.3s;">
+                        <div class="card-body text-white">
+                            <h5 class="card-title fw-bold" style="font-size: 1.5rem;">@Html.DisplayFor(modelItem => item.Name)</h5>
+                            <p class="card-text">
+                                <strong>ID:</strong> @Html.DisplayFor(modelItem => item.Id)<br />
+                                <strong>Manager:</strong> @Html.DisplayFor(modelItem => item.Manager)<br />
+                                <strong>Courses:</strong> @Html.DisplayFor(modelItem => item.CourseCount)<br />
+                                <strong>Instructors:</strong> @Html.DisplayFor(modelItem => item.InstructorCount)<br />
+                                <strong>Students:</strong> @Html.DisplayFor(modelItem => item.StudentCount)
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm rounded-pill px-3">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary btn-sm rounded-pill px-3">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm rounded-pill px-3">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .create-btn {
+        transition: all 0.3s ease;
+    }
+
+        .create-btn:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+    .card-body p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .card-footer .btn {
+        transition: all 0.3s ease;
+    }
+
+        .card-footer .btn:hover {
+            transform: translateY(-2px);
+        }
+</style>

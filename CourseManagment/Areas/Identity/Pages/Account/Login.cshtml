@@ -1,0 +1,263 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseMaster - Login</title>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0 rounded-4 glass-effect animate__animated animate__fadeIn">
+                    <div class="row g-0">
+                        <!-- Login Section -->
+                        <div class="col-md-7 p-4">
+                            <div class="text-center mb-3">
+                                <h1 class="fw-bold text-primary h4">@ViewData["Title"]</h1>
+                                <p class="text-muted small">Sign in to your CourseMaster account</p>
+                            </div>
+
+                            <form id="account" method="post">
+                                <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3 py-2 px-3" role="alert"></div>
+
+                                <div class="mb-2">
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Email" class="form-control modern-input" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                        <label asp-for="Input.Email" class="form-label small">Email</label>
+                                        <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-2">
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Password" class="form-control modern-input" autocomplete="current-password" aria-required="true" placeholder="password" />
+                                        <label asp-for="Input.Password" class="form-label small">Password</label>
+                                        <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="form-check">
+                                        <label asp-for="Input.RememberMe" class="form-check-label small text-muted">
+                                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+                                    <a id="forgot-password" asp-page="./ForgotPassword" class="small text-primary">Forgot Password?</a>
+                                </div>
+
+                                <button id="login-submit" type="submit" class="w-100 btn btn-primary py-2 shadow-sm hover-scale">
+                                    <i class="fas fa-sign-in-alt me-2"></i> Log In
+                                </button>
+
+                                <div class="text-center mt-3">
+                                    <p class="small mb-1">
+                                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-primary">Register as a new user</a>
+                                    </p>
+                                    <p class="small mb-0">
+                                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" class="text-primary">Resend email confirmation</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- External Login Section -->
+                        <div class="col-md-5 bg-light p-4 d-flex align-items-center">
+                            <section class="w-100">
+                                <div class="text-center mb-3">
+                                    <h3 class="h6 fw-semibold">Log In with</h3>
+                                    <p class="text-muted small">Quick Access</p>
+                                </div>
+
+                                @if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                                {
+                                    <div class="alert alert-info rounded-3 py-2 px-3">
+                                        <p class="mb-0 small">
+                                            No external authentication configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715" class="text-primary">this article</a>.
+                                        </p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                        <div class="d-grid gap-2">
+                                            @foreach (var provider in Model.ExternalLogins!)
+                                            {
+                                                <button type="submit" class="btn btn-outline-primary shadow-sm hover-scale py-2" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">
+                                                    <i class="fab fa-@provider.DisplayName.ToLower() me-2"></i> @provider.DisplayName
+                                                </button>
+                                            }
+                                        </div>
+                                    </form>
+                                }
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Styles {
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2062&auto=format&fit=crop') no-repeat center center fixed;
+                background-size: cover;
+                min-height: 100vh;
+                position: relative;
+                font-family: 'Inter', sans-serif;
+            }
+
+                body::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 255, 255, 0.3);
+                    z-index: -1;
+                }
+
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(12px);
+                border-radius: 1rem;
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+                .glass-effect:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                }
+
+            .form-floating > label {
+                color: #6c757d;
+                transition: all 0.3s ease;
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .form-floating > .form-control:focus ~ label,
+            .form-floating > .form-control:not(:placeholder-shown) ~ label {
+                transform: scale(0.85) translateY(-1.2rem) translateX(0.15rem);
+                color: #0d6efd;
+                background: #fff;
+                padding: 0 0.5rem;
+            }
+
+            .modern-input {
+                border-radius: 0.75rem;
+                border: none;
+                padding: 0.75rem;
+                background: rgba(255, 255, 255, 0.95);
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+                height: 2.5rem;
+            }
+
+                .modern-input:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+                    background: #fff;
+                }
+
+            .form-check-input {
+                border-color: #6c757d;
+                transition: border-color 0.3s ease;
+            }
+
+                .form-check-input:checked {
+                    background-color: #0d6efd;
+                    border-color: #0d6efd;
+                }
+
+            .btn-primary {
+                background: linear-gradient(135deg, #0d6efd, #6610f2);
+                border: none;
+                border-radius: 0.75rem;
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+            }
+
+                .btn-primary:hover {
+                    background: linear-gradient(135deg, #0b5ed7, #5a0ed6);
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+
+            .btn-outline-primary {
+                border-color: #0d6efd;
+                color: #0d6efd;
+                border-radius: 0.75rem;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+            }
+
+                .btn-outline-primary:hover {
+                    background: #0d6efd;
+                    color: #fff;
+                    transform: translateY(-2px);
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                }
+
+            .bg-light {
+                background: rgba(245, 245, 245, 0.9) !important;
+                backdrop-filter: blur(8px);
+            }
+
+            .hover-scale {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+                .hover-scale:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                }
+
+            .text-primary {
+                color: #0d6efd !important;
+            }
+
+            .alert {
+                border: none;
+                animation: fadeIn 0.5s ease-in;
+                font-size: 0.85rem;
+            }
+
+            .small {
+                font-size: 0.85rem;
+            }
+            keyframes fadeIn {
+                from
+
+            {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            }
+        </style>
+    }
+
+   
+        </script>
+    }
+</body>
+</html>

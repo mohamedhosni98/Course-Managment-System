@@ -1,0 +1,198 @@
+﻿@model IEnumerable<CourseManagment.ViewModel.StudentVM.StudentIndexViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container mt-5 px-4">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card border-0 shadow-2xl rounded-4 overflow-hidden animate__animated animate__fadeIn">
+                <div class="card-header bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600 text-white d-flex justify-content-between align-items-center py-4 px-5">
+                    <h4 class="mb-0 fw-bold tracking-tight"><i class="fas fa-users me-2"></i>Students Management Dashboard</h4>
+                    <a asp-action="create" class="btn btn-light btn-sm fw-semibold shadow-md rounded-pill px-4 hover-scale"><i class="fas fa-plus me-2"></i>Add New Student</a>
+                </div>
+                <div class="card-body p-5 bg-gradient-to-b from-gray-50 to-white">
+                    @if (!Model.Any())
+                    {
+                        <div class="alert alert-info d-flex align-items-center gap-3 rounded-4 p-4 animate__animated animate__bounceIn">
+                            <i class="fas fa-info-circle fa-2x text-indigo-600"></i>
+                            <span class="fs-5 fw-medium">No students available. Start by adding a new student!</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="table-responsive rounded-3 overflow-hidden shadow-md">
+                            <table class="table table-hover table-bordered align-middle mb-0 modern-table">
+                                <thead class="table-dark bg-gradient-to-r from-slate-900 to-gray-800">
+                                    <tr>
+                                        <th class="py-4 px-4 fw-semibold">@Html.DisplayNameFor(model => model.Id)</th>
+                                        <th class="py-4 px-4 fw-semibold">@Html.DisplayNameFor(model => model.Name)</th>
+                                        <th class="py-4 px-4 fw-semibold">@Html.DisplayNameFor(model => model.Address)</th>
+                                        <th class="py-4 px-4 fw-semibold">@Html.DisplayNameFor(model => model.DepartmentName)</th>
+                                        <th class="py-4 px-4 fw-semibold">@Html.DisplayNameFor(model => model.CourseCount)</th>
+                                        <th class="py-4 px-4 fw-semibold">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr class="transition-all hover:bg-indigo-50 hover:shadow-inner animate__animated animate__fadeInUp">
+                                            <td class="py-4 px-4">@Html.DisplayFor(modelItem => item.Id)</td>
+                                            <td class="py-4 px-4">@Html.DisplayFor(modelItem => item.Name)</td>
+                                            <td class="py-4 px-4">@Html.DisplayFor(modelItem => item.Address)</td>
+                                            <td class="py-4 px-4">@Html.DisplayFor(modelItem => item.DepartmentName)</td>
+                                            <td class="py-4 px-4">@Html.DisplayFor(modelItem => item.CourseCount)</td>
+                                            <td class="py-4 px-4">
+                                                <div class="d-flex gap-2 flex-wrap">
+                                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary rounded-pill px-4 shadow-sm hover-scale">
+                                                        <i class="fas fa-edit me-1"></i> Edit
+                                                    </a>
+                                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info rounded-pill px-4 shadow-sm hover-scale">
+                                                        <i class="fas fa-info-circle me-1"></i> Details
+                                                    </a>
+                                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger rounded-pill px-4 shadow-sm hover-scale delete-btn">
+                                                        <i class="fas fa-trash me-1"></i> Delete
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #dbeafe 0%, #e9d5ff 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background: white;
+            border-radius: 1rem;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+            }
+
+        .btn {
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .hover-scale:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .table-dark {
+            background: linear-gradient(90deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .rounded-pill {
+            border-radius: 50rem !important;
+        }
+
+        .transition-all {
+            transition: all 0.4s ease;
+        }
+
+        .alert {
+            animation: bounceIn 0.6s ease;
+            background: linear-gradient(45deg, #e0f2fe, #f3e8ff);
+            border: none;
+        }
+
+        .table-responsive {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            border-radius: 0.75rem;
+        }
+
+        .modern-table tr {
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+            .modern-table tr:hover {
+                transform: translateX(5px);
+            }
+        keyframes bounceIn {
+            0%
+
+        {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        60% {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+
+        }
+
+        .shadow-2xl {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.href;
+                    Swal.fire({
+                        title: 'Confirm Deletion',
+                        text: 'Are you sure you want to delete this student? This action cannot be undone!',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#ef4444',
+                        cancelButtonColor: '#6b7280',
+                        confirmButtonText: 'Yes, Delete',
+                        cancelButtonText: 'Cancel',
+                        reverseButtons: true,
+                        animation: true,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = href;
+                            Swal.fire({
+                                title: 'Deleted!',
+                                text: 'The student has been deleted successfully.',
+                                icon: 'success',
+                                timer: 1500,
+                                showConfirmButton: false
+                            });
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}

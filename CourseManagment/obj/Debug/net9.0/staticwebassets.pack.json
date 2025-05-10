@@ -1,0 +1,349 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\CourseManagment.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CourseManagment.x6b2q593h1.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\1dce9d81-c714-4d8b-b44b-760c583764c5_image_IJKCTc-__1685507221872_512.jpg",
+      "PackagePath": "staticwebassets\\images\\1dce9d81-c714-4d8b-b44b-760c583764c5_image_IJKCTc-__1685507221872_512.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\27efb0b6-ee3f-4df1-b3c7-422cfed84567.jpg",
+      "PackagePath": "staticwebassets\\images\\27efb0b6-ee3f-4df1-b3c7-422cfed84567.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\318fdf26-debc-445c-ae66-3a428851ea11_99115315_3091378117647888_4765191452416278528_n.jpg",
+      "PackagePath": "staticwebassets\\images\\318fdf26-debc-445c-ae66-3a428851ea11_99115315_3091378117647888_4765191452416278528_n.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\43a3e7c6-9db3-4627-9733-491fce719e2c.jpg",
+      "PackagePath": "staticwebassets\\images\\43a3e7c6-9db3-4627-9733-491fce719e2c.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\631ffa37-2f62-4d6f-9215-3e4eabcca084.jfif",
+      "PackagePath": "staticwebassets\\images\\631ffa37-2f62-4d6f-9215-3e4eabcca084.jfif"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\7000f391-982a-4500-bd3b-09aee005823f_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg",
+      "PackagePath": "staticwebassets\\images\\7000f391-982a-4500-bd3b-09aee005823f_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\87c02a94-bd31-4b6d-b36d-a6f28fec3eb8_R.jpg",
+      "PackagePath": "staticwebassets\\images\\87c02a94-bd31-4b6d-b36d-a6f28fec3eb8_R.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\a081a38f-1e6f-4608-99b4-8fca07476154_R.jpg",
+      "PackagePath": "staticwebassets\\images\\a081a38f-1e6f-4608-99b4-8fca07476154_R.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\a861f803-8ca3-4bc7-9af2-9bff8f75e3d5_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg",
+      "PackagePath": "staticwebassets\\images\\a861f803-8ca3-4bc7-9af2-9bff8f75e3d5_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\bcb78729-3826-4bfe-addf-19ccfc7ffe4c_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg",
+      "PackagePath": "staticwebassets\\images\\bcb78729-3826-4bfe-addf-19ccfc7ffe4c_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\ccd37179-00e9-4706-9375-3640d3840ddb.jfif",
+      "PackagePath": "staticwebassets\\images\\ccd37179-00e9-4706-9375-3640d3840ddb.jfif"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\cfce821e-6c3e-4bc6-840a-dcdf2292e1ae_R.jpg",
+      "PackagePath": "staticwebassets\\images\\cfce821e-6c3e-4bc6-840a-dcdf2292e1ae_R.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\d3a6d246-b5bf-48d3-a54a-ef714296c19f.webp",
+      "PackagePath": "staticwebassets\\images\\d3a6d246-b5bf-48d3-a54a-ef714296c19f.webp"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\d6b4b4ce-f9f0-4b5a-858f-b87849616450_R.jpg",
+      "PackagePath": "staticwebassets\\images\\d6b4b4ce-f9f0-4b5a-858f-b87849616450_R.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\e88b6d17-df65-4dff-bca3-22abf4b695ea.jfif",
+      "PackagePath": "staticwebassets\\images\\e88b6d17-df65-4dff-bca3-22abf4b695ea.jfif"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\f32d3695-9a9e-4d72-9e69-8ac3ffa180d1_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg",
+      "PackagePath": "staticwebassets\\images\\f32d3695-9a9e-4d72-9e69-8ac3ffa180d1_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\images\\fd613e7b-6d42-4ef0-b7ba-604d1c83f4e7_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg",
+      "PackagePath": "staticwebassets\\images\\fd613e7b-6d42-4ef0-b7ba-604d1c83f4e7_portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "E:\\my ptoject\\CourseManagment\\CourseManagment\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.CourseManagment.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.CourseManagment.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.CourseManagment.props",
+      "PackagePath": "build\\CourseManagment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.CourseManagment.props",
+      "PackagePath": "buildMultiTargeting\\CourseManagment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.CourseManagment.props",
+      "PackagePath": "buildTransitive\\CourseManagment.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

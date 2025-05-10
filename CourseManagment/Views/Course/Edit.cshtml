@@ -1,0 +1,222 @@
+﻿@model CourseManagment.ViewModel.CourseVM.CourseEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<h2>تعديل الكورس</h2>
+
+<form asp-action="Edit" method="post" class="card p-4 shadow-sm">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="row">
+        <!-- اسم الكورس -->
+        <div class="col-md-6 mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" placeholder="أدخل اسم الكورس" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <!-- الدرجة الكلية -->
+        <div class="col-md-3 mb-3">
+            <label asp-for="Degree" class="form-label"></label>
+            <input asp-for="Degree" type="number" class="form-control" placeholder="الدرجة الكلية" />
+            <span asp-validation-for="Degree" class="text-danger"></span>
+        </div>
+
+        <!-- الحد الأدنى للدرجة -->
+        <div class="col-md-3 mb-3">
+            <label asp-for="MinDegree" class="form-label"></label>
+            <input asp-for="MinDegree" type="number" class="form-control" placeholder="الحد الأدنى" />
+            <span asp-validation-for="MinDegree" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- الوصف -->
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="4" placeholder="أدخل وصف الكورس"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <!-- القسم -->
+        <div class="col-md-6 mb-3">
+            <label asp-for="DepartmentId" class="form-label"></label>
+            <select asp-for="DepartmentId" asp-items="Model.DepartmentsItem" class="form-select">
+                <option value="">اختر القسم</option>
+            </select>
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+
+        <!-- المدربين (Multiselect باستخدام Select2) -->
+        <div class="col-md-6 mb-3">
+            <label asp-for="InstructorsId" class="form-label">المدربين</label>
+            <select asp-for="InstructorsId" asp-items="Model.InstructorsItem" class="form-select select2" multiple="multiple"></select>
+            <span asp-validation-for="InstructorsId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- الطلاب (Multiselect باستخدام Select2) -->
+    <div class="mb-3">
+        <label asp-for="StudentsId" class="form-label">الطلاب</label>
+        <select asp-for="StudentsId" asp-items="Model.StudentsItem" class="form-select select2" multiple="multiple" id="studentsSelect"></select>
+        <span asp-validation-for="StudentsId" class="text-danger"></span>
+    </div>
+
+    <!-- جدول الطلاب مع الدرجات -->
+    <h4 class="mt-4">الطلاب والدرجات</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover" id="studentsTable">
+            <thead class="table-light">
+                <tr>
+                    <th>اسم الطالب</th>
+                    <th>الدرجة</th>
+                    <th>إجراء</th>
+                </tr>
+            </thead>
+            <tbody id="studentsTableBody">
+                @for (int i = 0; i < Model.StudentWithGrades.Count; i++)
+                {
+                    <tr data-student-id="@Model.StudentWithGrades[i].StudentId">
+                        <td>@Model.StudentWithGrades[i].StudentName</td>
+                        <td>
+                            <input type="number" name="StudentWithGrades[@i].Grade" value="@Model.StudentWithGrades[i].Grade" class="form-control" />
+                            <input type="hidden" name="StudentWithGrades[@i].StudentId" value="@Model.StudentWithGrades[i].StudentId" />
+                            <input type="hidden" name="StudentWithGrades[@i].StudentName" value="@Model.StudentWithGrades[i].StudentName" />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm remove-student">إزالة</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- الأزرار -->
+    <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-primary">حفظ</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">رجوع للقائمة</a>
+    </div>
+</form>
+
+@section Scripts {
+    <!-- تضمين jQuery (مطلوب لـ Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- تضمين Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- تضمين Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- تضمين Validation Scripts -->
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            // تهيئة Select2 للـ multiselect
+            $('.select2').select2({
+                placeholder: "اختر العناصر",
+                allowClear: true,
+                width: '100%'
+            });
+
+            $('#InstructorsId').select2({
+                placeholder: "اختر المدربين",
+                allowClear: true,
+                width: '100%'
+            });
+
+            $('#studentsSelect').select2({
+                placeholder: "اختر الطلاب",
+                allowClear: true,
+                width: '100%'
+            });
+
+            // متغير لتتبع عدد الصفوف في الجدول
+            let rowIndex = @Model.StudentWithGrades.Count;
+
+            // لما تختار طلاب جدد من الـ multiselect
+            $('#studentsSelect').on('change', function () {
+                let selectedStudents = $(this).select2('data'); // جيب الطلاب المختارين
+                let existingStudentIds = [];
+
+                // اجمع الـ IDs بتاعة الطلاب الموجودين بالفعل في الجدول
+                $('#studentsTableBody tr').each(function () {
+                    let studentId = $(this).data('student-id');
+                    if (studentId) {
+                        existingStudentIds.push(studentId.toString());
+                    }
+                });
+
+                // أضف الطلاب الجدد للجدول
+                selectedStudents.forEach(function (student) {
+                    let studentId = student.id;
+                    let studentName = student.text;
+
+                    // لو الطالب مش موجود بالفعل في الجدول، أضفه
+                    if (!existingStudentIds.includes(studentId)) {
+                        let rowHtml = `
+                            <tr data-student-id="${studentId}">
+                                <td>${studentName}</td>
+                                <td>
+                                    <input type="number" name="StudentWithGrades[${rowIndex}].Grade" value="0" class="form-control" />
+                                    <input type="hidden" name="StudentWithGrades[${rowIndex}].StudentId" value="${studentId}" />
+                                    <input type="hidden" name="StudentWithGrades[${rowIndex}].StudentName" value="${studentName}" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-sm remove-student">إزالة</button>
+                                </td>
+                            </tr>`;
+                        $('#studentsTableBody').append(rowHtml);
+                        rowIndex++;
+                        existingStudentIds.push(studentId);
+                    }
+                });
+
+                // إزالة الطلاب اللي تم إلغاء اختيارهم
+                $('#studentsTableBody tr').each(function () {
+                    let studentId = $(this).data('student-id').toString();
+                    let isSelected = selectedStudents.some(s => s.id === studentId);
+                    if (!isSelected) {
+                        $(this).remove();
+                    }
+                });
+
+                // إعادة ترتيب الفهارس (indexes) بتاعة الحقول
+                $('#studentsTableBody tr').each(function (index) {
+                    $(this).find('input[name$=".Grade"]').attr('name', `StudentWithGrades[${index}].Grade`);
+                    $(this).find('input[name$=".StudentId"]').attr('name', `StudentWithGrades[${index}].StudentId`);
+                    $(this).find('input[name$=".StudentName"]').attr('name', `StudentWithGrades[${index}].StudentName`);
+                });
+
+                rowIndex = $('#studentsTableBody tr').length;
+            });
+
+            // إزالة طالب من الجدول
+            $(document).on('click', '.remove-student', function () {
+                let row = $(this).closest('tr');
+                let studentId = row.data('student-id').toString();
+
+                // إزالة الطالب من الجدول
+                row.remove();
+
+                // إزالة الطالب من الـ multiselect
+                let selectedStudents = $('#studentsSelect').val().filter(id => id !== studentId);
+                $('#studentsSelect').val(selectedStudents).trigger('change');
+
+                // إعادة ترتيب الفهارس
+                $('#studentsTableBody tr').each(function (index) {
+                    $(this).find('input[name$=".Grade"]').attr('name', `StudentWithGrades[${index}].Grade`);
+                    $(this).find('input[name$=".StudentId"]').attr('name', `StudentWithGrades[${index}].StudentId`);
+                    $(this).find('input[name$=".StudentName"]').attr('name', `StudentWithGrades[${index}].StudentName`);
+                });
+
+                rowIndex = $('#studentsTableBody tr').length;
+            });
+        });
+    </script>
+}

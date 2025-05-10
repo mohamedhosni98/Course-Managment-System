@@ -1,0 +1,31 @@
+﻿@using CourseManagment.ViewModel.DepartmentVM
+@model DepartmentDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4 text-primary fw-bold text-center mb-4">Department Details</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 text-center">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">@Model.Name</h3>
+                    <p class="text-muted">ID: @Model.Id</p>
+                    <hr />
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-user-tie me-2"></i>
+                            <strong>Name:</strong> @Html.DisplayFor(model => model.Name)
+                        </li>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-user-tie me-2"></i>
+                            <strong>Manager:</strong> @Html.DisplayFor(model => model.Manager)
+                        </li>
+                </div>
+                <div class="card-footer bg-light">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">Edit</a>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>

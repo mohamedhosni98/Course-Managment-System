@@ -1,0 +1,95 @@
+﻿@model CourseManagment.ViewModel.StudentVM.StudentEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">تعديل بيانات الطالب</h2>
+                    <hr class="mb-4" />
+                    <form asp-action="Edit" enctype="multipart/form-data" dir="rtl">
+                        <div asp-validation-summary="ModelOnly" class="text-danger text-center mb-3"></div>
+
+                        <!-- Name Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Name" class="form-control rounded-3" placeholder="الاسم" />
+                            <label asp-for="Name" class="form-label">الاسم</label>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- Address Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Address" class="form-control rounded-3" placeholder="العنوان" />
+                            <label asp-for="Address" class="form-label">العنوان</label>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Department Dropdown -->
+                        <div class="form-floating mb-3">
+                            <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-select rounded-3">
+                                <option value="">-- اختر القسم --</option>
+                            </select>
+                            <label asp-for="DepartmentId" class="form-label">القسم</label>
+                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div class="mb-3">
+                            <label asp-for="ImageFile" class="form-label">صورة الطالب</label>
+                            <input asp-for="ImageFile" class="form-control rounded-3" type="file" accept="image/*" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        </div>
+
+                        <!-- Image Preview -->
+                        @if (!string.IsNullOrEmpty(Model.Image))
+                        {
+                            <div class="text-center mb-3">
+                                <img src="@Model.Image" alt="صورة الطالب" class="img-thumbnail shadow-sm" style="max-width: 120px; border-radius: 50%;" />
+                            </div>
+                        }
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-3">حفظ التعديلات</button>
+                        </div>
+
+                        <!-- Back Link -->
+                        <div class="text-center">
+                            <a asp-action="Index" class="text-muted text-decoration-none">العودة إلى القائمة</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Optional: Add live image preview for file input
+        document.querySelector('input[type="file"]').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.className = 'img-thumbnail shadow-sm';
+                    img.style.maxWidth = '120px';
+                    img.style.borderRadius = '50%';
+                    const preview = document.querySelector('.text-center.mb-3');
+                    preview.innerHTML = '';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}

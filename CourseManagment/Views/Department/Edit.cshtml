@@ -1,0 +1,120 @@
+﻿@using CourseManagment.ViewModel.DepartmentVM
+@model DepartmentEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h1 class="mb-3 text-center text-primary fw-bold">Edit Department</h1>
+            <h4 class="mb-4 text-center text-muted">Department Details</h4>
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <form asp-action="Edit" method="post">
+                        <div asp-validation-summary="All" class="text-danger mb-3 text-center"></div>
+
+                        <!-- حقل الاسم -->
+                        <div class="form-group mb-4 position-relative">
+                            <label asp-for="Name" class="control-label fw-bold text-primary"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-building text-primary"></i></span>
+                                <input asp-for="Name" class="form-control border-start-0" placeholder="Enter department name" />
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- حقل المدير -->
+                        <div class="form-group mb-4 position-relative">
+                            <label asp-for="Manager" class="control-label fw-bold text-primary"></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-user-tie text-primary"></i></span>
+                                <input asp-for="Manager" class="form-control border-start-0" placeholder="Enter manager name" />
+                            </div>
+                            <span asp-validation-for="Manager" class="text-danger"></span>
+                        </div>
+
+                        <!-- الأزرار -->
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg me-2 shadow-sm">
+                                <i class="fas fa-save me-2"></i>Save
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm">
+                                <i class="fas fa-arrow-left me-2"></i>Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- إضافة FontAwesome للأيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<style>
+    body {
+        background-color: #f8f9fa; /* خلفية فاتحة للصفحة */
+    }
+
+    .card {
+        border-radius: 15px;
+        background: linear-gradient(145deg, #ffffff, #f1f3f5); /* خلفية متدرجة خفيفة */
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px); /* رفع بسيط عند الـ hover */
+        }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .form-control, .input-group-text {
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+    .input-group-text {
+        background-color: #e9ecef;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 25px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(90deg, #007bff, #0056b3); /* تدرج لون أزرق */
+    }
+
+    .btn-secondary {
+        background: linear-gradient(90deg, #6c757d, #5a6268); /* تدرج لون رمادي */
+    }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    .text-danger {
+        font-size: 0.875em;
+        margin-top: 5px;
+    }
+</style>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

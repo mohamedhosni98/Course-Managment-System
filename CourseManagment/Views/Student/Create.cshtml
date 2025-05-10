@@ -1,0 +1,107 @@
+﻿@model CourseManagment.ViewModel.StudentVM.StudentAddViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-header bg-primary text-white text-center py-3" style="border-radius: 15px 15px 0 0;">
+                    <h4 class="mb-0"><i class="fas fa-user-plus me-2"></i>إضافة طالب جديد</h4>
+                </div>
+                <div class="card-body p-4">
+                    <!-- عرض رسائل TempData -->
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                        </div>
+                    }
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @TempData["ErrorMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="إغلاق"></button>
+                        </div>
+                    }
+
+                    <form asp-action="Create" method="post" enctype="multipart/form-data" dir="rtl">
+                        <div asp-validation-summary="ModelOnly" class="text-danger text-center mb-3"></div>
+
+                        <!-- حقل الاسم -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Name" class="form-control rounded-3" placeholder="اسم الطالب" />
+                            <label asp-for="Name" class="form-label">اسم الطالب</label>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- حقل العنوان -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Address" class="form-control rounded-3" placeholder="العنوان (اختياري)" />
+                            <label asp-for="Address" class="form-label">العنوان (اختياري)</label>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- حقل القسم -->
+                        <div class="form-floating mb-3">
+                            <select asp-for="DepartmentId" asp-items="Model.DepartmentName" class="form-select rounded-3">
+                                <option value="">-- اختر القسم --</option>
+                            </select>
+                            <label asp-for="DepartmentId" class="form-label">القسم</label>
+                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                        </div>
+
+                        <!-- حقل الصورة -->
+                        <div class="mb-3">
+                            <label asp-for="ImageFile" class="form-label fw-bold">صورة الطالب</label>
+                            <input asp-for="ImageFile" type="file" class="form-control rounded-3" accept="image/*" onchange="previewImage(event)" />
+                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                            <div class="mt-2 text-center">
+                                <img id="imagePreview" src="/images/default-user.png" alt="معاينة الصورة" style="max-width: 150px; border-radius: 50%; display: block;" class="img-thumbnail shadow-sm" />
+                            </div>
+                        </div>
+
+                        <!-- الأزرار -->
+                        <div class="d-flex justify-content-between gap-3">
+                            <button type="submit" class="btn btn-primary btn-lg flex-grow-1">
+                                <i class="fas fa-save me-2"></i>إضافة الطالب
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-lg flex-grow-1">
+                                <i class="fas fa-arrow-right me-2"></i>العودة للقائمة
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            var imagePreview = document.getElementById('imagePreview');
+
+            reader.onload = function () {
+                if (reader.readyState == 2) {
+                    imagePreview.src = reader.result;
+                    imagePreview.style.display = 'block';
+                }
+            }
+
+            if (event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            } else {
+                imagePreview.src = '/images/default-user.png';
+                imagePreview.style.display = 'block';
+            }
+        }
+    </script>
+}
